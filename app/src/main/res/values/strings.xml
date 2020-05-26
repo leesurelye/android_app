@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SocketSendData</string>
+    <string name="camera">take camera</string>
+</resources>
