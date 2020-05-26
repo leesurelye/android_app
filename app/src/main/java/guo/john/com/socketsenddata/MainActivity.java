@@ -1,5 +1,6 @@
 package guo.john.com.socketsenddata;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button sendjsonBTN;
     private Button sendXmlBTn;
+    private Button takePhoto;
+
 
     private SocketManager socket;
     private PrintWriter write;
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }).start();
         findView();
+
     }
 
     /**
@@ -52,11 +56,22 @@ public class MainActivity extends AppCompatActivity {
         sexET = (EditText) findViewById(R.id.edittext2);
         sendjsonBTN = (Button) findViewById(R.id.btn1);
         sendXmlBTn = (Button) findViewById(R.id.btn2);
-
+        takePhoto = (Button)findViewById(R.id.camera);
+        // set listener
         sendjsonBTN.setOnClickListener(sendjsonBTNClick);
-       //todo list sendXmlBTn.setOnClickListener(sendXmlBTnClick);
+        sendXmlBTn.setOnClickListener(sendXmlBTnClick);
+        takePhoto.setOnClickListener(takePhotoListener);
     }
 
+
+    private View.OnClickListener takePhotoListener = new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+            Intent intent=new Intent(MainActivity.this,Camera.class);
+            //启动
+            startActivity(intent);
+        }
+    };
     /**
      * 发送json
      */
@@ -121,6 +136,10 @@ public class MainActivity extends AppCompatActivity {
             createXmlFile(userName, sex);
         }
     };
+
+
+
+
 
     private void createXmlFile(String userName, String userSex) {
         StringWriter writer = new StringWriter();

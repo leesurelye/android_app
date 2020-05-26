@@ -32,7 +32,6 @@ import java.io.IOException;
  */
 public class Camera  extends AppCompatActivity {
 
-    public class MainActivity extends AppCompatActivity {
         public static final int TAKE_PHOTO = 1;
         private ImageView picture;
         private Uri imageUri;
@@ -44,7 +43,7 @@ public class Camera  extends AppCompatActivity {
             setContentView(R.layout.activity_camera);
             Button takePhoto = (Button) findViewById(R.id.btn_take_photo);
             picture = (ImageView) findViewById(R.id.picture);
-            mContext = MainActivity.this;
+            mContext = Camera.this;
 
 
             takePhoto.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +68,7 @@ public class Camera  extends AppCompatActivity {
                     // 如果Android版本大于等于7.0
                     if (Build.VERSION.SDK_INT >= 24) {
                         // 将File对象转换成一个封装过的Uri对象
-                        imageUri = FileProvider.getUriForFile(MainActivity.this, "com.example.lenovo.cameraalbumtest.fileprovider", outputImage);
+                        imageUri = FileProvider.getUriForFile(Camera.this, "com.example.lenovo.cameraalbumtest.fileprovider", outputImage);
                     } else {
                         // 将File对象转换为Uri对象，这个Uri标识着output_image.jpg这张图片的本地真实路径
                         imageUri = Uri.fromFile(outputImage);
@@ -131,5 +130,4 @@ public class Camera  extends AppCompatActivity {
                 default:
             }
         }
-    }
 }

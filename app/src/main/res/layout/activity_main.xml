@@ -55,6 +55,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="xml形式发送" />
+        <Button
+            android:id="@+id/camera"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="拍照" />
     </LinearLayout>
 
 </LinearLayout>
