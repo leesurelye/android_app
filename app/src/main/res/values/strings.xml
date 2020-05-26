@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">SocketSendData</string>
     <string name="camera">拍照</string>
+    <string name="imageDescription">照片放置处</string>
 </resources>

@@ -1,7 +1,10 @@
-package guo.john.com.socketsenddata;
+package guo.john.com.entity;
 
 import java.io.Serializable;
 
+/**
+ * @author yue
+ */
 public class UserInfo implements Serializable {
 
 	private String userName;

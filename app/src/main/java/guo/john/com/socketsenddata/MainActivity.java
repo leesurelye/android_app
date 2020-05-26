@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.google.gson.Gson;
+import guo.john.com.entity.UserInfo;
 import org.xmlpull.v1.XmlSerializer;
 
 import java.io.PrintWriter;
